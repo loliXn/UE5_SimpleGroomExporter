@@ -1,5 +1,6 @@
 ﻿// Copyright Epic Games, Inc. All Rights Reserved.
 
+using System.IO;
 using UnrealBuildTool;
 
 public class SimpleGroomExporter : ModuleRules
@@ -56,13 +57,18 @@ public class SimpleGroomExporter : ModuleRules
 				, "SlateCore"
 				, "InputCore"
 				, "EditorFramework"
-				, "EditorStyle"
+				, "AppFramework"
 				, "UnrealEd"
 				, "HairStrandsCore"
-				,
+				, "PropertyEditor"
 				// ... add private dependencies that you statically link with here ...	
 			}
 		);
+
+		if (Directory.Exists(Path.Combine(Target.EngineDirectory, "Source/Editor/EditorStyle")))
+		{
+			PrivateDependencyModuleNames.Add("EditorStyle");
+		}
 
 
 		DynamicallyLoadedModuleNames.AddRange(
