@@ -42,7 +42,7 @@ void SSimpleGroomExporterExportDialog::Construct(const FArguments& InArgs)
 			.Padding(2)
 			[
 				SNew(SBorder)
-				.BorderImage(FAppStyle::GetBrush("ToolPanel.GroupBorder"))
+				.BorderImage(FAppStyle::Get().GetBrush("ToolPanel.GroupBorder"))
 				[
 					SNew(SVerticalBox)
 					+ SVerticalBox::Slot()
@@ -64,15 +64,15 @@ void SSimpleGroomExporterExportDialog::Construct(const FArguments& InArgs)
 			.Padding(5)
 			[
 				SNew(SUniformGridPanel)
-				.SlotPadding(FAppStyle::GetMargin("StandardDialog.SlotPadding"))
-				.MinDesiredSlotWidth(FAppStyle::GetFloat("StandardDialog.MinDesiredSlotWidth"))
-				.MinDesiredSlotHeight(FAppStyle::GetFloat("StandardDialog.MinDesiredSlotHeight"))
+				.SlotPadding(FAppStyle::Get().GetMargin("StandardDialog.SlotPadding"))
+				.MinDesiredSlotWidth(FAppStyle::Get().GetFloat("StandardDialog.MinDesiredSlotWidth"))
+				.MinDesiredSlotHeight(FAppStyle::Get().GetFloat("StandardDialog.MinDesiredSlotHeight"))
 				+ SUniformGridPanel::Slot(0, 0)
 				.HAlign(HAlign_Left)
 				[
 					SNew(SButton)
 					.HAlign(HAlign_Left)
-					.ContentPadding(FAppStyle::GetMargin("StandardDialog.ContentPadding"))
+					.ContentPadding(FAppStyle::Get().GetMargin("StandardDialog.ContentPadding"))
 					.Text(LOCTEXT("Cancel", "Cancel"))
 					.OnClicked(this, &SSimpleGroomExporterExportDialog::OnButtonClick, EAppReturnType::Cancel)
 					.IsEnabled(true)
@@ -81,7 +81,7 @@ void SSimpleGroomExporterExportDialog::Construct(const FArguments& InArgs)
 				[
 					SNew(SButton)
 					.HAlign(HAlign_Center)
-					.ContentPadding(FAppStyle::GetMargin("StandardDialog.ContentPadding"))
+					.ContentPadding(FAppStyle::Get().GetMargin("StandardDialog.ContentPadding"))
 					.Text(LOCTEXT("ExportText", "Export"))
 					.IsEnabled_Lambda
 					(
